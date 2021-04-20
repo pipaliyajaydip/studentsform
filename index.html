@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Student-Form</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        h2{margin-left:55px;
+        margin-top:10px;
+        color: black;}
+        
+        .ip{
+            border:none;
+            background: transparent;
+            border-bottom: solid 2px orange;
+            border-width:2px;  
+            padding:2px 2px 0px 2px;
+        }
+        label {
+            color:green;
+            
+        }
+        form{margin-left:15px;
+        margin-top:5px;
+        }
+        hr{margin-right:17px;}
+        .selectcolor{border-radius:10px;
+        outline:none;}
+        
+        .container{border:solid blue;
+        border-radius:10px;
+        width:300px;
+        height:380px;
+        margin-left:10px;
+        padding:15px 15px 15px 15px;}
+        
+        .btn{ margin-left:37px;
+        outline:none; 
+        font-size:20px;}
+        #submit{height:30px;
+        border:solid green;
+        border-radius:5px;
+        color: green;
+        background-color: lightyellow;
+        }
+        #submit:hover{background-color: orange;
+        color:green;
+        border: black;}
+        #reset:hover{background-color: orange;
+        color:green;
+        border: black;}
+        #reset{height:30px;
+        border:solid red;
+        border-radius:5px;
+        color: red;
+        background-color: lightpink;
+        }  
+        table{border:solid 3px orange;class=""
+        }
+        th{color:green;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" >
+            <h2>Student Form</h2>   
+            <label>Name : </label> 
+            <input id="name" type="text" class="ip" required>
+            <br><br>
+            <label>En. No : </label>     
+               <input 
+                type="number" class="ip" id="enno" required>
+               <br><br>
+               <label>D.O.B : </label>
+               <input type="date"  class="ip" id="DOB" required>
+               <br><br>
+               <label>E-mail : </label>
+               <input type="email" size="20" id="email" class="ip" required>
+               <br><br>
+               <label>Contact:</label>
+               <input type="number" size="20" id="contact" class="ip"required>
+               <br><br>
+               <label>Gender : </label>
+               <select id="gen" class="ip">
+                   <option>Select your Gender</option>
+                   <option value="Male">Male</option>
+                   <option value="Female">Female</option>
+               </select>
+               <br><br>
+               <label>Favourite Colour : </label>
+               <input size="12"  id="selcolor"type="text" class="ip" required>
+               <br>
+               <br>
+               <input class="btn" onclick="AddRow()" id="submit"type="Submit">
+               <input class="btn" id="reset"type="reset">
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="distable" >
+        <center>
+        <table id="show" border="2px">
+            <tr>
+             <th>Name</th>
+             <th>En.No.</th>
+             <th>D.O.B</th>
+             <th>E-mail</th>
+             <th>Contact No.</th>
+             <th >Gender</th>
+             <th>Favourite Colour</th>       
+            </tr>
+            </center>
+            
+        </table>
+        </center>
+    </div>
+    
+    <script>
+var list1 = [];
+var list2 = [];
+var list3 = [];
+var list4 = [];
+var list5 = [];
+var list6 = [];
+var list7 = [];
+var n=1;
+var x=0;
+function AddRow(){
+    
+    var AddRown = document.getElementById('show');
+    var NewRow = AddRown.insertRow(n);
+    
+    list1[x] = document.getElementById("name").value;
+    list2[x] = document.getElementById("enno").value;
+
+list3[x] = document.getElementById("DOB").value;
+       list4[x] = document.getElementById("email").value;
+     list5[x] = document.getElementById("contact").value;
+       list6[x] = document.getElementById("gen").value;
+       list7[x] = document.getElementById("selcolor").value;
+    
+    var cel1 = NewRow.insertCell(0);
+    var cel2 = NewRow.insertCell(1);
+       var cel3 = NewRow.insertCell(2);
+       var cel4 = NewRow.insertCell(3);
+    var cel5 = NewRow.insertCell(4);
+       var cel6 = NewRow.insertCell(5);
+       var cel7 = NewRow.insertCell(6);
+    
+    cel1.innerHTML= list1[x];
+    cel2.innerHTML= list2[x];
+    cel3.innerHTML= list3[x];
+    cel4.innerHTML= list4[x];
+    cel5.innerHTML= list5[x];
+    cel6.innerHTML= list6[x];
+    cel7.innerHTML= list7[x];
+    
+    n++;
+    x++;
+}
+    </script>
+</body>
+</html>
